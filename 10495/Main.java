@@ -13,12 +13,21 @@ public class Main
         {
             String alpha = line.replaceAll("[^A-Za-z]","");
             String lowerAlpha = alpha.toLowerCase();
-            StringBuilder sb = new StringBuilder(lowerAlpha);
-            String reverse = sb.reverse().toString();
-            if(lowerAlpha.equals(reverse))
-                out.println("You are saved");
-            else
-                out.println("Uh oh...");
+            int middle = lowerAlpha.length()/2;
+            boolean palindrome = true;
+            for(int i=0,j=lowerAlpha.length()-1; i<middle; i++)
+            {
+                if(lowerAlpha.charAt(i) != lowerAlpha.charAt(j))
+                {
+                    out.println("Uh oh..");
+                    palindrome = false;
+                    break;
+                }
+                j--;
+            }
+
+            if(palindrome)
+                out.println("You won't be eaten!");
         }
         out.close();
     }
