@@ -1,0 +1,10 @@
+char dic[MAX_DIC][MAX_DIC];
+while(true)
+   {
+      cin >> dic[i];
+      if( dic[i][0] == '#' )
+         break;
+      else
+         i++;
+   }
+#
